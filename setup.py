@@ -19,9 +19,14 @@ def get_long_description():
     return '\n\n'.join(descr)
 
 
+def flytrex_version(version):
+    delimiter = "." if "+" in version else "+"
+    return f"{version}{delimiter}flytrex-1"
+
+
 setup(
     name='mccabe',
-    version=get_version(),
+    version=flytrex_version(get_version()),
     description="McCabe checker, plugin for flake8",
     long_description=get_long_description(),
     keywords='flake8 mccabe',
